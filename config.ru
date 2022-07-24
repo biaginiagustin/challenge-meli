@@ -1,4 +1,5 @@
-require_relative 'http/router'
+# Require router and handlers
+Dir[File.join(__dir__, 'http', '*.rb')].each { |file| require file }
 
 class Application
     def call(env)

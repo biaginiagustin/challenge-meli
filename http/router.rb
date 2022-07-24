@@ -1,6 +1,3 @@
-require_relative 'healthz_handler'
-require_relative 'home_handler'
-
 class Router
     attr :request
 
