@@ -1,3 +1,5 @@
+require_relative '../models/dna'
+
 class DNAChecker
     VALID_SEQUENCES = ["AAAA", "TTTT", "CCCC", "GGGG"]
     SEQUENCE_LENGTH = 4
@@ -20,7 +22,13 @@ class DNAChecker
             
         end
 
-        return founded_sequences.size >= NEEDED_SEQUENCES
+        
+        dna = Dna.create(
+            :dna => dna,
+            :mutant => founded_sequences.size >= NEEDED_SEQUENCES
+        )
+
+        return dna.mutant
     end
 
     private

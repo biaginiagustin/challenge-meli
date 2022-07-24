@@ -1,4 +1,3 @@
 class Dna < ActiveRecord::Base
-    validates :dna, presence: true
-    validates :mutant, presence: true
+    validates :dna, presence: true, uniqueness: true
 end
