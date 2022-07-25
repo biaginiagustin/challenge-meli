@@ -12,3 +12,8 @@ test:
   <<: *default
   database: mutants_test
 
+production:
+  adapter: postgresql
+  pool: 5
+  url: <%= ENV['DATABASE_URL'] =>  
+
