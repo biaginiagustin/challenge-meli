@@ -12,7 +12,11 @@ class Router
         when "/healthz"
             HealthzHandler.new(request).call
         when "/mutant"
-            MutantHandler.new(request).call
+            if request.post?
+                MutantHandler.new(request).call 
+            else
+                not_found
+            end
         when "/stats"
             StatsHandler.new(request).call
         else
