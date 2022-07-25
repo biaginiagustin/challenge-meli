@@ -13,6 +13,8 @@ class Router
             HealthzHandler.new(request).call
         when "/mutant"
             MutantHandler.new(request).call
+        when "/stats"
+            StatsHandler.new(request).call
         else
             not_found
         end
