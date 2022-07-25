@@ -7,4 +7,8 @@ def db_configuration
     YAML.load(File.read(db_configuration_file))
 end
 
-ActiveRecord::Base.establish_connection(db_configuration[ENV.fetch('APP_ENV')])
+if ENV.fetch('APP_ENV') != 'production'
+    ActiveRecord::Base.establish_connection(db_configuration[ENV.fetch('APP_ENV')])
+else
+    ActiveRecord::Base.establish_connection(ENV.fetch('DATABASE_URL'))
+end
