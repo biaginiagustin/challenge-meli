@@ -7,11 +7,17 @@
 
 ## Instructions
 
+### Install dependencies
+```
+gem install bundler
+bundle install
+```
+
 ### Create the databases
 Assuming that you have postgres installed in your local machine and it doesn't require password
- ```
+```
 bundle exec rake db:create
- ```
+```
  
 ### Migrate the database for both environments
 ```
